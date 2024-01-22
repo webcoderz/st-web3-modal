@@ -7,10 +7,7 @@ def app():
 
     if isinstance(connect_button, dict) and "address" in connect_button:
         st.write(f'address: {connect_button["address"]}')
-        disconnect_button = st.disconnect_component()
-
-        if disconnect_button:
-            st.write("disconnected")
+        st.disconnect_component()
 
 if __name__ == '__main__':
     app()

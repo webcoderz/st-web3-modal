@@ -7,8 +7,7 @@ import React, { useEffect } from "react";
 import { useAppContext } from "./AppContext";
 
 const Connect: NextPage = () => {
-  const address = useAddress();
-  const [prevAddress, setPrevAddress] = useState("");
+  const { address, setAddress } = useAppContext();
 
   // Tell Streamlit we're ready to start receiving data
   useEffect(() => {
@@ -19,10 +18,7 @@ const Connect: NextPage = () => {
   // Send the address back to Streamlit whenever it changes
   useEffect(() => {
     try {
-      if (address !== prevAddress) {
-        Streamlit.setComponentValue({ address: address });
-        setPrevAddress(address || "None");
-      }
+      Streamlit.setComponentValue({ address: address || "None" });
     } catch (error) {
       console.error("Error in useEffect:", error);
     }
