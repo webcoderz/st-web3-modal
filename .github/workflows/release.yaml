@@ -61,7 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: prod
-      url: https://pypi.org/p/st_web3modal  # Replace <package-name> with your PyPI project name
+      url: https://pypi.org/p/st-web3-modal  # Replace <package-name> with your PyPI project name
     permissions:
       id-token: write  # IMPORTANT: mandatory for trusted publishing
 
