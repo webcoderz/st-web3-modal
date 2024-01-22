@@ -24,7 +24,7 @@ jobs:
       run: yarn 
     - name: yarn build
       working-directory: ./web3modal/frontend
-      run: CI=false NODE_OPTIONS=--openssl-legacy-provider yarn build
+      run: CI=false yarn build
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
