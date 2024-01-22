@@ -19,6 +19,7 @@
 }
 
 .connectWalletButton {
+  background-color: #fe8400 !important ;
   cursor: pointer;
   color: #1c1c1c;
   padding: 10px 20px;
@@ -28,7 +29,7 @@
 }
 
 .connectWalletButton:hover {
-  background-color: #ee3624;
+  background-color: #ee7b00 !important;
   color: #fff;
 }
 
