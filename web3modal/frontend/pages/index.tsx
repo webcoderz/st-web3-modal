@@ -4,10 +4,13 @@ import styles from "../styles/Home.module.css";
 import { useAddress } from "@thirdweb-dev/react";
 import { Streamlit, withStreamlitConnection } from "streamlit-component-lib";
 import { useState, useEffect } from "react";
+import React from "react";
+import { useDisconnect } from "@thirdweb-dev/react";
 
 const Home: NextPage = () => {
   const address = useAddress();
   const [prevAddress, setPrevAddress] = useState("");
+  const disconnect = useDisconnect();
 
   
     // Tell Streamlit we're ready to start receiving data
@@ -36,6 +39,9 @@ const Home: NextPage = () => {
       ) : (
         <div>
           <p>Eth Address is: {address}</p>
+          <button className={styles.connectWalletButton} onClick={disconnect}>
+      Disconnect
+    </button>
         </div>
       )}
     </div>
