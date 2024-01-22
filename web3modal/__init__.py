@@ -7,20 +7,29 @@ import streamlit as st
 _RELEASE = False
 
 if not _RELEASE:
-    _modal_component = components.declare_component(
-        "web3modal_component",
-        url="http://localhost:3000",
+    _connect_component = components.declare_component(
+        "web3connect_component",
+        url="http://localhost:3000/connect",
+    )
+    _disconnect_component = components.declare_component(
+        "web3disconnect_component",
+        url="http://localhost:3000/disconnect",
     )
 else:
     parent_dir = os.path.dirname(os.path.abspath(__file__))
     build_dir = os.path.join(parent_dir, "frontend/build")
-    _modal_component = components.declare_component("web3modal_component", path=build_dir)
+    _connect_component = components.declare_component("web3connect_component", path=os.path.join(build_dir, "connect"))
+    _disconnect_component = components.declare_component("web3disconnect_component", path=os.path.join(build_dir, "disconnect"))
 
 
-def modalComponent():
-    component_value = _modal_component()
+def connectComponent():
+    component_value = _connect_component()
     return component_value
 
+def disconnectComponent():
+    component_value = _disconnect_component()
+    return component_value
 
 #monkeypatch streamlit
-st.modal_component = modalComponent
+st.connect_component = connectComponent
+st.disconnect_component = disconnectComponent

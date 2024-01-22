@@ -5,19 +5,17 @@ import { useAddress } from "@thirdweb-dev/react";
 import { Streamlit, withStreamlitConnection } from "streamlit-component-lib";
 import { useState, useEffect } from "react";
 import React from "react";
-import { useDisconnect } from "@thirdweb-dev/react";
 
-const Home: NextPage = () => {
+const Connect: NextPage = () => {
   const address = useAddress();
   const [prevAddress, setPrevAddress] = useState("");
-  const disconnect = useDisconnect();
 
-  
-    // Tell Streamlit we're ready to start receiving data
+  // Tell Streamlit we're ready to start receiving data
   useEffect(() => {
-      Streamlit.setComponentReady();
-      Streamlit.setFrameHeight(600)
-    }, []);
+    Streamlit.setComponentReady();
+    Streamlit.setFrameHeight(600)
+  }, []);
+
   // Send the address back to Streamlit whenever it changes
   useEffect(() => {
     try {
@@ -29,25 +27,14 @@ const Home: NextPage = () => {
       console.error("Error in useEffect:", error);
     }
   }, [address, prevAddress]);
-  
 
-  
   return (
     <div className={styles.container}>
-      {!address ? (
+      {!address && (
         <ConnectWallet className={styles.connectWalletButton} />
-      ) : (
-        <div>
-          <p>Eth Address is: {address}</p>
-          <button className={styles.connectWalletButton} onClick={disconnect}>
-      Disconnect
-    </button>
-        </div>
       )}
     </div>
   );
 };
 
-export default withStreamlitConnection(Home);
-
-
+export default withStreamlitConnection(Connect);
