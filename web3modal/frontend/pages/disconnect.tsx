@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.css";
 import { useDisconnect } from "@thirdweb-dev/react";
 import { Streamlit, withStreamlitConnection } from "streamlit-component-lib";
 import React, { useEffect } from "react";
-import { useAppContext } from "./AppContext";
+import { useAppContext } from "../pages/contexts/AppContext";
 
 const Disconnect: NextPage = () => {
   const { address, setAddress } = useAppContext();
