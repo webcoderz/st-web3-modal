@@ -1,0 +1,273 @@
+.container {
+  margin-top: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  
+  position: absolute;
+  
+  padding: 0 24px;
+}
+
+.loading {
+  position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.connectWalletButton {
+  cursor: pointer;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.connectWalletButton:hover {
+  background-color: #ee3624;
+  color: #fff;
+}
+
+.h1 {
+  margin-bottom: 0px;
+}
+
+.explain {
+  font-size: 1.125rem;
+  max-width: 1200px;
+}
+
+.divider {
+  width: 50%;
+  border-color: grey;
+  opacity: 0.25;
+}
+
+.smallDivider {
+  width: 25%;
+  border-color: grey;
+  margin-top: 64px;
+  opacity: 0.25;
+}
+
+.nftBoxGrid {
+  width: 1200px;
+  max-width: 95vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1%;
+  margin-top: 28px;
+  flex-wrap: wrap;
+  
+}
+
+.nftBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  margin: 28px;
+}
+
+.optionSelectBox {
+  background-color: #ef3624;
+  color: white;
+  border: none;
+  padding: 10px 20px; /* Adjust the padding to make it smaller */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px; /* Adjust the font size to make it smaller */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 12px;
+}
+
+
+.optionSelectBox:hover {
+  background-color: #832b39;
+}
+
+
+.selectBoxTitle {
+  font-size: 1.75rem;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.selectBoxDescription {
+  color: rgba(255, 255, 255, 0.9);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* Between 1200 and 800 */
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
+  .nftBox {
+    width: 49%;
+    margin-top: 16px;
+  }
+}
+
+/* beneath 800
+*/
+@media only screen and (max-width: 800px) {
+  .nftBoxGrid {
+    justify-content: center;
+  }
+  .nftBox {
+    width: 90%;
+    margin-top: 16px;
+  }
+  .optionSelectBox {
+    width: 90%;
+    margin-top: 16px;
+  }
+}
+
+.tokenGrid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1%;
+  width: 1600px;
+  max-width: 95vw;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+
+.tokenItem {
+  width: 35%;
+  height: 120px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  gap: 16px;
+}
+
+.tokenLabel {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Second tokenLabel item */
+
+.tokenValue {
+  font-size: 1.3rem;
+  margin-top: 8px;
+  margin-bottom: 0px;
+  font-weight: 500;
+}
+
+/* On Mobile, make tokenGrid 100% width */
+@media only screen and (max-width: 850px) {
+  .tokenItem {
+    width: 90%;
+    margin-top: 12px;
+  }
+}
+
+/* Screen less than 630, then hide .center */
+@media only screen and (max-width: 630px) {
+  .center {
+    display: none;
+  }
+}
+
+.spacerTop {
+  margin-top: 16px;
+}
+
+.bigSpacerTop {
+  margin-top: 32px;
+}
+
+.spacerBottom {
+  margin-bottom: 16px;
+}
+
+.detailPageHr {
+  margin-top: 0px;
+  margin-bottom: 32px;
+}
+
+.nftMedia {
+  width: 100%;
+  max-height: 300px;
+  border-radius: 15px;
+}
+
+/* Home.module.css or your CSS file */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+  z-index: 999; /* Bring it to the front */
+}
+
+.popupContent {
+  background: #112233; /* Background color, adjust as needed */
+  padding: 40px; /* Double the padding for a larger box */
+  border-radius: 20px; /* Double the border radius */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Modern drop shadow */
+  max-width: 800px; /* Double the max-width for a larger box */
+  text-align: center;
+  color: #ffffff; /* Text color, adjust as needed */
+  font-family: 'Arial', sans-serif; /* Modern font, replace with your preferred web3 font */
+  font-size: 24px; /* Double the text size */
+}
+
+.closeButton {
+  margin-top: 20px; /* Double the margin */
+  cursor: pointer;
+  background: #336699; /* Button background color, adjust as needed */
+  color: #ffffff; /* Button text color, adjust as needed */
+  padding: 10px 20px; /* Double the padding for a larger button */
+  border: none;
+  border-radius: 10px; /* Double the border radius */
+  font-weight: bold;
+  font-family: 'Arial', sans-serif; /* Button font, replace with your preferred web3 font */
+  font-size: 24px; /* Double the button text size */
+}
+
+.closeButton:hover {
+  background: #224455; /* Hover color, adjust as needed */
+}
+
+.url {
+  color: #f5841f; /* Set the default link color to #e6f85e */
+  text-decoration: none; /* Remove the underline */
+  transition: color 0.3s; /* Add a smooth transition for the text color change */
+
+  /* Slightly darker color on hover */
+  .url.hover {
+    color: #e6f85e; /* Change the link color to a slightly darker color on hover (customize as needed) */
+  }
+}
+
+.explainer {
+  max-width: 50%;
+  margin: auto;
+  padding: 10px;
+}
