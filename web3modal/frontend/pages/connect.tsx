@@ -9,7 +9,7 @@ import React from "react";
 const Connect: NextPage = () => {
   const address = useAddress();
   const [prevAddress, setPrevAddress] = useState("");
-
+  
   // Tell Streamlit we're ready to start receiving data
   useEffect(() => {
     Streamlit.setComponentReady();
@@ -22,6 +22,11 @@ const Connect: NextPage = () => {
       if (address !== prevAddress) {
         Streamlit.setComponentValue({ address: address });
         setPrevAddress(address || "None");
+
+        // If the wallet is connected, set the frame height back to its original value
+        if (address) {
+          Streamlit.setFrameHeight(100);
+        }
       }
     } catch (error) {
       console.error("Error in useEffect:", error);

@@ -11,7 +11,7 @@ const Disconnect: NextPage = () => {
   // Tell Streamlit we're ready to start receiving data
   useEffect(() => {
     Streamlit.setComponentReady();
-    Streamlit.setFrameHeight(600)
+    Streamlit.setFrameHeight(200)
   }, []);
   return (
     <div className={styles.container}>
