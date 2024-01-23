@@ -135,3 +135,6 @@ dist
 
 
 web3modal/__pycache__
+*.pyc
+build
+st_web3_modal.egg-info
