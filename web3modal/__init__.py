@@ -18,7 +18,7 @@ else:
     _connect_component = components.declare_component("web3connect_component", path=os.path.join(build_dir, "connect"))
 
 
-def connectComponent():
+def connectComponent(key=None):
     component_value = _connect_component()
     return component_value
 
