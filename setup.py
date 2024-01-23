@@ -6,7 +6,7 @@ this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
 setuptools.setup(
-    name="st_wallet_connect",
+    name="st_web3_modal",
     version="0.0.1",
     author="Cody Webb",
     author_email="cody.l.webb@gmail.com",
