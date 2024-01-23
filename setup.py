@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setuptools.setup(
     name="st_wallet_connect",
-    version="0.0.1",
+    version="0.1.0",
     author="Cody Webb",
     author_email="cody.l.webb@gmail.com",
     description="Streamlit component that allows you to use thirdweb web3modal to connect to a wallet.",
