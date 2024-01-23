@@ -41,15 +41,14 @@ const Connect: NextPage = () => {
   return (
     <div className={styles.container}>
       {true && (
-  <ConnectWallet
-    theme="light"
-    btnTitle="Login to GeNFT"
-    className={styles.connectWalletButton}
-    onConnect={handleConnectWallet}
-  />
-)}
-
-      <p>Address is: {address || "None"}</p>
+        <ConnectWallet
+          theme="light"
+          btnTitle="Login to GeNFT"
+          className={styles.connectWalletButton}
+          onConnect={handleConnectWallet}
+        />
+      )}
+      
     </div>
   );
 };
