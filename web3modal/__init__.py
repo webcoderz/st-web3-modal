@@ -9,13 +9,13 @@ _RELEASE = True
 if not _RELEASE:
     _connect_component = components.declare_component(
         "web3connect_component",
-        url="http://localhost:3000/connect",
+        url="http://localhost:3000",
     )
 
 else:
     parent_dir = os.path.dirname(os.path.abspath(__file__))
     build_dir = os.path.join(parent_dir, "frontend/build")
-    _connect_component = components.declare_component("web3connect_component", path=os.path.join(build_dir, "connect"))
+    _connect_component = components.declare_component("web3connect_component", path=build_dir)
 
 
 def connectComponent(key=None):
