@@ -4,7 +4,7 @@ import streamlit as st
 
 # Create a _RELEASE constant. We'll set this to False while we're developing
 # the component, and True when we're ready to package and distribute it.
-_RELEASE = False
+_RELEASE = True
 
 if not _RELEASE:
     _connect_component = components.declare_component(
