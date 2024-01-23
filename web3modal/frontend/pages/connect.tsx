@@ -42,7 +42,13 @@ const Connect: NextPage = () => {
     <div className={styles.container}>
       {true && (
         <ConnectWallet
-          theme="light"
+          modalSize="wide"
+          welcomeScreen={{
+            title: "Welcome to GeNFT",
+            subtitle: "Connect your wallet to get started",
+          
+          }}
+          theme="dark"
           btnTitle="Login to GeNFT"
           className={styles.connectWalletButton}
           onConnect={handleConnectWallet}
