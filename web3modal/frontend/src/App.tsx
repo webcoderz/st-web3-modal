@@ -16,7 +16,7 @@ interface State {
 class Connect extends StreamlitComponentBase<State> {
   public state = {
     address: null,
-    frameHeight: 350, // Initial frame height
+    frameHeight: this.props.args["modal_size"] === "wide" ? 550 : 350, // Set initial frame height based on modal size
     prevAddress: null
   };
 
@@ -43,7 +43,7 @@ class Connect extends StreamlitComponentBase<State> {
       newHeight = 450;
     } else {
       // If the connect modal is open but no account is connected yet
-      newHeight = 350;
+      newHeight = 571;
     }
   
     // Set the new frame height

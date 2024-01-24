@@ -4,24 +4,7 @@
   width: 100%;
   position: relative;  
   padding: 0 24px;
+  overflow: visible; /* Add this line */
+  border-radius: 10px;
 
-
-}
-
-
-.connectWalletButton {
-  background-color: #fe8400 !important ;
-  cursor: pointer;
-  color: #1c1c1c;
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  position: absolute;
-
-}
-
-.connectWalletButton:hover {
-  background-color: #ee7b00 !important;
-  color: #fff;
 }
