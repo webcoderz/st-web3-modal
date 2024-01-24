@@ -25,31 +25,29 @@ class Connect extends StreamlitComponentBase<State> {
   public componentDidMount() {
     // Tell Streamlit we're ready to start receiving data
     Streamlit.setComponentReady();
-    Streamlit.setFrameHeight(this.state.frameHeight);
-
+  
+    // Determine the initial frame height based on the content to be shown
+    let initialHeight = this.state.address ? 200 : 350; // Set to 200 if no address is connected
+  
+    // Update the state with the initial frame height
+    this.setState({ frameHeight: initialHeight }, () => {
+      // Set the frame height in Streamlit after the state is updated
+      Streamlit.setFrameHeight(this.state.frameHeight);
+    });
+  
     // Listen for account changes
     if (window.ethereum) {
       window.ethereum.on('accountsChanged', this.handleAccountsChanged);
       window.ethereum.on('chainChanged', this.handleAccountsChanged);
       window.ethereum.on('disconnect', this.handleAccountsChanged);
     }
-  
   }
   private adjustFrameHeight() {
-    let newHeight = 200;
-
-    if (this.state.address) {
-      // If an account is connected, we might want to show the full menu
-      newHeight = 450;
-    } else {
-      // If the connect modal is open but no account is connected yet
-      newHeight = 571;
-    }
+    let newHeight = this.state.address ? 450 : 200; // Set to 200 if no address is connected
   
     // Set the new frame height
     Streamlit.setFrameHeight(newHeight);
   }
-  
 
   public componentDidUpdate() {
     // Send the address back to Streamlit only if it has changed
