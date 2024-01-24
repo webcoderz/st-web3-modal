@@ -17,13 +17,18 @@ def btn_css():
 
 
 def app():
-    
+    btn = st.button("Click me")
     with st.sidebar.header("Web3Modal"):
         connect_button = st.connect_component(key="connect")
         if isinstance(connect_button, dict) and connect_button["address"] != "None":
+            st.session_state['address'] = connect_button["address"]
+                # Display the address from the session state
+    if btn:
+        if 'address' in st.session_state:
             st.write('Connected!')
-            st.write(connect_button["address"])
-
+            st.write(st.session_state['address'])
+        else:
+            st.write('Not Connected!')
 
 if __name__ == '__main__':
     app()

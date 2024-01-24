@@ -18,8 +18,14 @@ else:
     _connect_component = components.declare_component("web3connect_component", path=build_dir)
 
 
-def connectComponent(key=None):
-    component_value = _connect_component()
+def connectComponent(
+        button_theme="dark", 
+        modal_size="compact", 
+        welcome_title="Welcome", 
+        welcome_subtitle="Connect your wallet to get started", 
+        button_title="Connect Wallet", 
+        key=None):
+    component_value = _connect_component(button_theme=button_theme, modal_size=modal_size, welcome_title=welcome_title, welcome_subtitle=welcome_subtitle, button_title=button_title, key=key)
     return component_value
 
 
